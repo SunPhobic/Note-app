@@ -1,17 +1,20 @@
 import React,{useState} from 'react'
 import {FormContainer,Input,TextArea,SubmitButton} from '../elements/FormElements'
-import {useNoteContext} from '../context/noteState'
+import addNote from '../firebase/addNote'
+
 
 function Form() {
     const [title,setTitle] = useState('')
     const [note,setNote] = useState('')
     
-    const {addNote} = useNoteContext()
+    
 
     function handleSubmit(ev){
         ev.preventDefault()
         if(title !== '' && note !== ''){
             addNote(title,note)
+            .then(()=>console.log('elemento agregado'))
+            .catch(err=>console.error(err))
             setTitle('')
             setNote('')
         }else{

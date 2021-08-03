@@ -1,10 +1,10 @@
 import React from 'react'
 import {NoteContainer, NoteTitle, NoteBody,NotesContainer} from '../elements/noteListElements'
-import {useNoteContext} from '../context/noteState'
+import {useNoteContext} from '../context/notesContext'
 
 function NoteList() {
 
-    const {notes} = useNoteContext()
+    const notes = useNoteContext()
 
     return (
         
@@ -22,6 +22,7 @@ function NoteList() {
                 )
             })
 
+        
         }
         </NotesContainer>
     )    

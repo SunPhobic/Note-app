@@ -1,14 +1,14 @@
 import React from 'react'
 import './App.css';
 import Home from './components/Home'
-import {NoteContextProvider} from './context/noteState'
+import {NotesContextProvider} from './context/notesContext'
 
 
 function App() {
   return (
-    <NoteContextProvider>
+    <NotesContextProvider>
       <Home />
-    </NoteContextProvider>
+    </NotesContextProvider>
     
   );
 }
